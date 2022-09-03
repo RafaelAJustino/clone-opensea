@@ -1,0 +1,273 @@
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
+}
+
+header .logo {
+    width: 150px;
+    height: 72px;
+    padding-left: 16px;
+    padding-right: 24px;
+}
+
+header .search {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-right: 30px;
+}
+
+header .search img {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 11px;
+    left: 10px;
+}
+
+header .search input {
+    border: 2px solid rgb(229, 232, 235);
+    padding: 12px 10px 12px 45px;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 100%;
+    color: rgb(229, 232, 235);
+}
+
+header nav {
+    margin-right: 30px;
+}
+
+header ul {
+    display: flex;
+    gap: 32px;
+}
+
+header ul div {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+header ul a {
+    color: rgba(4, 17, 29, 0.75);
+    font-weight: bold;
+}
+
+header ul li:hover {
+    color: black;
+}
+
+header ul svg:hover {
+    filter: brightness(0.8);
+}
+
+.hamburguer {
+    display: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.hamburguer .line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: rgba(4, 17, 29, 0.75);
+    margin-block: 5px;
+    border-radius: 4px;
+    transition: transform 0.1s, opacity 0.15s;
+}
+
+.hamburguer.active .line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburguer.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguer.active .line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    width: 50px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+header .nav-menu-mobile {
+    z-index: 99;
+    margin: 0;
+    position: absolute;
+    display: none;
+    right: 0px;
+    top: 72px;
+    background-color: white;
+    width: 420px;
+    padding: 16px;
+    box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
+}
+
+header .nav-menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+header .nav-menu-mobile li>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .nav-menu-mobile li .icon{
+    width: 26px;
+    height: 26px;
+    filter: opacity(0.6);
+}
+
+header .nav-menu-mobile li .opts{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    text-align: left;
+}
+
+header .nav-menu-mobile li .arrow {
+    width: 15px;
+}
+
+#connect-wallet {
+    margin-bottom: 40px;
+}
+
+#links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:  30px 40px 0px;
+}
+
+#links img {
+    width: 28px;
+    height: 28px;
+    filter: opacity(0.6);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .hamburguer {
+        display: block;
+        margin-right: 30px;
+    }
+
+    header .text {
+        display: none;
+    }
+
+    header .nav-menu-mobile {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hamburguer {
+        display: block;
+    }
+
+    header .svg {
+        display: none;
+    }
+
+    header .nav-menu {
+        display: none;
+    }
+
+    header .nav-menu-mobile {
+        width: -webkit-fill-available;
+    }
+
+    #links {
+        width: 300px;
+        margin: 20px auto 0px;
+    }
+}
