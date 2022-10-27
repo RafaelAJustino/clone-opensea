@@ -9,6 +9,10 @@ html {
     padding: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .ctn {
     margin: 0 auto;
 }
@@ -33,7 +37,7 @@ html {
     color: rgb(255, 255, 255);
 }
 
-.blue:hover{
+.blue:hover {
     transition: all 0.2s ease 0s;
     box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px;
     background-color: rgb(46, 142, 238);
@@ -165,7 +169,7 @@ html {
     justify-content: space-between;
 }
 
-#principal article:hover{
+#principal article:hover {
     cursor: pointer;
     transition: box-shadow 0.3s ease-in 0s;
     box-shadow: rgb(4 17 29 / 25%) 0px 0px 50px 0px;
@@ -210,7 +214,52 @@ html {
     color: rgb(32, 129, 226);
 }
 
-#principal .data .info {}
+#principal .login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#principal .login input {
+    width: 250px;
+    height: 20px;
+    padding: 10px;
+}
+
+#principal .login p {
+    color: red;
+}
+
+#principal .login button {
+    background-color: rgb(32, 129, 226);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+#principal .login button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#character {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#character img {
+    border-radius: 8px;
+}
 
 @media screen and (max-width: 1200px) {}
 
@@ -249,7 +298,7 @@ html {
     }
 
     #principal aside .btns .blue,
-    #principal aside .btns .white{
+    #principal aside .btns .white {
         width: 70px;
     }
 

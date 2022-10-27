@@ -17,9 +17,12 @@
     <header>
         <img class="logo" src="./img/opensea-logo.svg" alt="">
 
-        <div class="search">
-            <img src="./img/search.svg" alt="">
-            <input type="text" placeholder="Search items, collections, and accounts">
+        <div id="src-input" class="search">
+            <img src="./img/search.svg" alt="" onclick="search()">
+            <!-- <input id="searchIp" class='searchIp' type="text" placeholder="Search items, collections, and accounts"> -->
+            <select name="searchIp" class='searchIp' id="searchIp">
+                <option value="Rick">Rick</option>
+            </select>
         </div>
 
         <nav class="nav-menu">
@@ -123,7 +126,7 @@
     <section id="principal">
         <img class="background-img" src="./img/img-principal.jpg" alt="">
         <div class="ctn">
-            <div class="div-1">
+            <div class="div-1 hidden">
                 <aside>
                     <h2>Discover, collect, and sell extraordinary NFTs</h2>
                     <p>OpenSea is the world's first and largest NFT marketplace</p>
@@ -142,7 +145,7 @@
                 </aside>
             </div>
 
-            <div class="div-2">
+            <div class="div-2 hidden">
                 <article>
                     <img class="big" src="./img/img-principal.jpg" alt="">
                     <div class="data">
@@ -162,6 +165,18 @@
                     </div>
                 </article>
             </div>
+
+            <div class="login">
+                <input type="text" name="email" id="email" placeholder="E-mail">
+                <input type="password" name="password" id="password" placeholder="Senha">
+                <p id="er-login" class="hidden">Usuário ou senha inválido</p>
+                <button onclick="login()">Logar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sec-char">
+        <div id="character" class="ctn">
         </div>
     </section>
 
