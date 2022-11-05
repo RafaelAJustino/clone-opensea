@@ -8,6 +8,11 @@ const div2 = document.querySelector('.div-2');
 const div3 = document.querySelector('.login');
 const secItems = document.getElementById('character');
 
+const pages = 42;
+const src = document.getElementById('searchIp');
+
+
+
 const menuIsActive = () => {
 	burguerMenu.classList.toggle('active');
 	navMenu.classList.toggle('hidden')
@@ -58,32 +63,43 @@ async function login() {
 					erLogin.classList.remove('hidden');
 				}
 			});
+
+			for (let i = 1; i < pages; i++) {
+				fetch(`https://rickandmortyapi.com/api/character/?page=${i}`)
+					.then((response) =>
+						response.json())
+					.then(async (data) => {
+						const result = data.results;
+						result.forEach((product) => {
+							const opt = document.createElement('option');
+							opt.value = product.name;
+							opt.innerText = product.name;
+							src.appendChild(opt);
+						});
+					});
+			}
 	}
 }
 
 window.onload = async () => {
 	const hasToken = localStorage.getItem('reqres');
 
-	const src = document.getElementById('searchIp');
-
-	const pages = 42;
-
-	for (let i = 1; i < pages; i++) {
-		fetch(`https://rickandmortyapi.com/api/character/?page=${i}`)
-			.then((response) =>
-				response.json())
-			.then(async (data) => {
-				const result = data.results;
-				result.forEach((product) => {
-					const opt = document.createElement('option');
-					opt.value = product.name;
-					opt.innerText = product.name;
-					src.appendChild(opt);
-				});
-			});
-	}
-
 	if (!!hasToken) {
+		for (let i = 1; i < pages; i++) {
+			fetch(`https://rickandmortyapi.com/api/character/?page=${i}`)
+				.then((response) =>
+					response.json())
+				.then(async (data) => {
+					const result = data.results;
+					result.forEach((product) => {
+						const opt = document.createElement('option');
+						opt.value = product.name;
+						opt.innerText = product.name;
+						src.appendChild(opt);
+					});
+				});
+		}
+
 		srcInput.classList.remove('hidden');
 		div1.classList.remove('hidden');
 		div2.classList.remove('hidden');
